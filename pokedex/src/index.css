@@ -33,19 +33,21 @@
     .card_right {
         width: 350px;
         height: 600px;
-        background-color: rgb(165, 128, 128);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 4px 8px rgb(231, 231, 231);
+        position: relative;
+        text-align: center;
+        overflow: hidden;
+        display: flex;
+        flex-direction: center;
     }
 
-    .hello-text {
-        position: absolute;
-        top: -40px;
-        /* Adjust to move "Hello" above the info_box */
-        left: 0;
-        width: 100%;
-        text-align: center;
-        font-size: 2em;
-        color: black;
+    .info_box {
+        width: 270px;
+        height: 400px;
+        position: relative;
+        margin: 40px 10px 0px 15px;
+        background-color: #e7e7e7;
     }
 
     .info_button {
@@ -62,6 +64,16 @@
         box-sizing: border-box;
     }
 
+    .hello-text {
+        font-size: large;
+        font-weight: bold;
+    }
+
+    .types-text {
+        font-size: medium;
+        font-weight: bold;
+    }
+
     .moves_button {
         width: 100px;
         height: 50px;
@@ -70,7 +82,7 @@
         flex-direction: center;
         justify-content: center;
         align-items: center;
-        background-color: rgb(6, 129, 8);
+        background-color: rgb(231, 231, 231);
         border-radius: 10px;
         padding: 15px;
         box-sizing: border-box;
@@ -84,7 +96,7 @@
         flex-direction: center;
         justify-content: space-around;
         align-items: center;
-        background-color: rgb(174, 26, 26);
+        background-color: rgb(231, 231, 231);
         border-radius: 10px;
         padding: 15px;
         box-sizing: border-box;
@@ -97,7 +109,7 @@
         display: flex;
         flex-direction: column;
         position: relative;
-        background-color: rgb(38, 48, 224);
+        background-color: rgb(255, 255, 255);
         border-radius: 10px;
         margin: -70px 0px 0px 50px;
 
@@ -135,10 +147,11 @@
         flex-direction: center;
         justify-content: center;
         align-items: center;
-        background-color: rgb(6, 129, 8);
+        background-color: rgb(231, 231, 231);
         border-radius: 10px;
         padding: 15px;
         box-sizing: border-box;
+        font: bold;
     }
 
     .right_arrow {
@@ -148,7 +161,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgb(193, 251, 100);
+        background-color: rgb(231, 231, 231);
         border-radius: 10px;
         padding: 15px;
         box-sizing: border-box;
