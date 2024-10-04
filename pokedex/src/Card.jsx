@@ -11,7 +11,7 @@ function Card() {
     const [pokemonSpeed, setPokemonSpeed] = useState(null);
     const [showInfo, setShowInfo] = useState(true);
     const [pokemonMoves, setPokemonMoves] = useState([]);
-    const [activeButton, setActiveButton] = useState('info'); // Default to 'info' button being active
+    const [activeButton, setActiveButton] = useState('info');
 
 
 
@@ -46,12 +46,12 @@ function Card() {
 
     const handleInfoClick = () => {
         setShowInfo(true);
-        setActiveButton('info'); // Set the active button to 'info'
+        setActiveButton('info');
     };
 
     const handleMovesClick = () => {
         setShowInfo(false);
-        setActiveButton('moves'); // Set the active button to 'moves'
+        setActiveButton('moves');
     };
 
 
