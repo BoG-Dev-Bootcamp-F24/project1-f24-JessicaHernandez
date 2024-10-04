@@ -8,9 +8,16 @@
         margin: 0;
     }
 
+
+
+
     .card-container {
         perspective: 1000px;
         display: flex;
+        border: #00000096;
+        border-style: solid;
+        border-width: 2px;
+        padding: 4px;
     }
 
     .image {
@@ -28,25 +35,35 @@
         position: relative;
         text-align: center;
         overflow: hidden;
+
     }
 
     .card_right {
         width: 350px;
-        height: 600px;
+        height: 590px;
         background-color: rgb(255, 255, 255);
-        box-shadow: 0 4px 8px rgb(231, 231, 231);
         position: relative;
         text-align: center;
         overflow: hidden;
         display: flex;
         flex-direction: center;
+
     }
 
     .info_box {
-        width: 270px;
-        height: 400px;
+        width: 280px;
+        height: 350px;
         position: relative;
-        margin: 40px 10px 0px 15px;
+        margin: 30px 10px 0px 15px;
+        overflow: hidden;
+        text-align: left;
+        padding: 0px 10px 30px 10px;
+        background-color: #e7e7e7;
+
+    }
+
+    .info-content {
+        font-weight: normal;
         background-color: #e7e7e7;
     }
 
@@ -58,15 +75,42 @@
         flex-direction: center;
         justify-content: center;
         align-items: center;
-        background-color: rgb(6, 129, 8);
+        background-color: #e7e7e7;
         border-radius: 10px;
         padding: 15px;
         box-sizing: border-box;
+        cursor: pointer;
+        border: none;
+        outline: none;
+    }
+
+    .info-content p {
+        font-size: 18px;
+        margin: 5px 0;
+    }
+
+    .moves-list ul {
+        list-style-type: none;
+        padding-left: 10px;
+        font-weight: 50;
+    }
+
+    .moves-list li {
+        padding: 1px 0;
+        font-weight: 50;
+        font-size: 20px;
+        background-color: #e7e7e7;
+    }
+
+    .moves-list {
+        background-color: #e7e7e7;
     }
 
     .hello-text {
         font-size: large;
         font-weight: bold;
+        display: flex;
+        justify-content: center;
     }
 
     .types-text {
@@ -86,6 +130,8 @@
         border-radius: 10px;
         padding: 15px;
         box-sizing: border-box;
+        border: none;
+        outline: none;
     }
 
     .name {
@@ -101,13 +147,17 @@
         padding: 15px;
         box-sizing: border-box;
         margin: 10px 10px 100px 50px;
+        border: #808080;
+        border-style: solid;
+        border-width: 1.5px;
+        font-size: large;
     }
 
     .pokemon_type {
         width: 150px;
         height: 20px;
         display: flex;
-        flex-direction: column;
+        justify-content: left;
         position: relative;
         background-color: rgb(255, 255, 255);
         border-radius: 10px;
@@ -119,11 +169,21 @@
         width: 200px;
         height: 20px;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: left;
         position: relative;
-        background-color: rgb(38, 48, 224);
-        border-radius: 10px;
+        background-color: rgba(20, 28, 174, 0);
         margin: 0px 0px 0px 50px;
+
+
+    }
+
+    .type span {
+        margin: 0px 0px 0px 10px;
+        border-radius: 5px;
+        font: bold;
+        height: 100%;
+        width: 30%;
 
     }
 
@@ -137,7 +197,16 @@
         justify-content: space-evenly;
         padding: 15px;
         box-sizing: border-box;
+        border: none;
+        outline: none;
     }
+
+    .active-button {
+        background-color: #00FF00;
+        border: none;
+        outline: none;
+    }
+
 
     .left_arrow {
         width: 100px;
@@ -151,7 +220,9 @@
         border-radius: 10px;
         padding: 15px;
         box-sizing: border-box;
-        font: bold;
+        border: none;
+        outline: none;
+        cursor: pointer;
     }
 
     .right_arrow {
@@ -165,6 +236,7 @@
         border-radius: 10px;
         padding: 15px;
         box-sizing: border-box;
+        cursor: pointer;
     }
 
     .card-front {
@@ -190,11 +262,13 @@
         flex-direction: column;
         display: flex;
         justify-content: center;
-        width: 90%;
+        width: 78%;
         height: 100%;
         max-height: 250px;
-        object-fit: cover;
+        object-fit: contain;
         border-bottom: 1px solid #ccc;
+        border: #000000;
+        border-style: solid;
     }
 
     .card-content {

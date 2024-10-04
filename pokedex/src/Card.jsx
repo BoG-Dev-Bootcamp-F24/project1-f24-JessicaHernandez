@@ -11,6 +11,8 @@ function Card() {
     const [pokemonSpeed, setPokemonSpeed] = useState(null);
     const [showInfo, setShowInfo] = useState(true);
     const [pokemonMoves, setPokemonMoves] = useState([]);
+    const [activeButton, setActiveButton] = useState('info'); // Default to 'info' button being active
+
 
 
     const fetchPokemon = async (id) => {
@@ -44,12 +46,14 @@ function Card() {
 
     const handleInfoClick = () => {
         setShowInfo(true);
+        setActiveButton('info'); // Set the active button to 'info'
     };
-
 
     const handleMovesClick = () => {
         setShowInfo(false);
+        setActiveButton('moves'); // Set the active button to 'moves'
     };
+
 
     const handlePrevious = () => {
         if (currentId > 1) {
@@ -65,8 +69,8 @@ function Card() {
         <>
             <div className="card-container">
                 <div className="card">
+                    <h2 className="card-title">{"Bits of Good Mid-Semester Project"}</h2>
                     <div className="card-content">
-                        <h2 className="card-title">{pokemonData ? pokemonData.name : 'Loading...'}</h2>
                         <div className="image">
                             <img
                                 src={pokemonData ? pokemonData.sprites.front_default : 'basil.jpg'}
@@ -108,55 +112,68 @@ function Card() {
                                 {pokemonData && (
                                     <>
                                         <div>
-                                            <h4>Height: {pokemonData.height / 10} m</h4>
+                                            <p>Height: {pokemonData.height / 10} m</p>
                                         </div>
                                         <div>
-                                            <h4>Weight: {pokemonData.weight} kg</h4>
+                                            <p>Weight: {pokemonData.weight} kg</p>
                                         </div>
                                         {pokemonHp !== null && (
                                             <div>
-                                                <h4>HP: {pokemonHp}</h4>
+                                                <p>HP: {pokemonHp}</p>
                                             </div>
                                         )}
                                         {pokemonAttack !== null && (
                                             <div>
-                                                <h4>Attack: {pokemonAttack}</h4>
+                                                <p>Attack: {pokemonAttack}</p>
                                             </div>
                                         )}
                                         {pokemonDefense !== null && (
                                             <div>
-                                                <h4>Defense: {pokemonDefense}</h4>
+                                                <p>Defense: {pokemonDefense}</p>
                                             </div>
                                         )}
                                         {pokemonSpecialAttack !== null && (
                                             <div>
-                                                <h4>Special Attack: {pokemonSpecialAttack}</h4>
+                                                <p>Special Attack: {pokemonSpecialAttack}</p>
                                             </div>
                                         )}
                                         {pokemonSpeed !== null && (
                                             <div>
-                                                <h4>Speed: {pokemonSpeed}</h4>
+                                                <p>Speed: {pokemonSpeed}</p>
                                             </div>
                                         )}
                                     </>
                                 )}
+
                             </div>
                         ) : (
-                            <div className="moves-list">
+                            <>
                                 <div className="hello-text">Moves</div>
-                                <ul>
-                                    {pokemonMoves.map((moveInfo, index) => (
-                                        <li key={index}>{moveInfo.move.name}</li>
-                                    ))}
-                                </ul>
-                            </div>
+                                <div className="moves-list">
+                                    <ul>
+                                        {pokemonMoves.map((moveInfo, index) => (
+                                            <li key={index}>{moveInfo.move.name}</li> // Display move name
+                                        ))}
+                                    </ul>
+                                </div>
+                            </>
                         )}
+
                     </div>
 
                     <div className="buttons">
-                        <ButtonInfo label="Info" onClick={handleInfoClick} />
-                        <ButtonInfo label="Moves" onClick={handleMovesClick} />
+                        <ButtonInfo
+                            label="Info"
+                            onClick={handleInfoClick}
+                            className={activeButton === 'info' ? 'active-button' : ''}
+                        />
+                        <ButtonInfo
+                            label="Moves"
+                            onClick={handleMovesClick}
+                            className={activeButton === 'moves' ? 'active-button' : ''}
+                        />
                     </div>
+
                 </div>
             </div>
         </>
@@ -167,12 +184,23 @@ const getTypeColor = (type) => {
     const typeColors = {
         grass: '#78C850',
         fire: '#EE8130',
-        water: '#6390FO',
+        water: '#6390F0',
         bug: '#A6B91A',
         normal: '#A8A77A',
         electric: '#F7D02C',
         poison: '#A33EA1',
-
+        grass: '#7AC74C',
+        ice: '#96D9D6',
+        fighting: '#C22E28',
+        ground: '#E2BF65',
+        flying: '#A98FF3',
+        psychic: '#F95587',
+        rock: '#B6A138',
+        ghost: '#735797',
+        dragon: '#6F35FC',
+        dark: '#705746',
+        steel: '#B7B7CE',
+        fairy: '#D685AD'
         //need to add more
     };
     return typeColors[type] || '#A8A878';

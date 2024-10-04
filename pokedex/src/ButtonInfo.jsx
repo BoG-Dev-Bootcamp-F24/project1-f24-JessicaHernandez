@@ -1,11 +1,12 @@
 import './ButtonInfo.css'
 
-function ButtonInfo({ label, onClick }) {
+function ButtonInfo({ label, onClick, className }) {
     return (
-        <div className="button" onClick={onClick}>
-            <p>{label}</p>
-        </div>
+        <button className={`info_button ${className}`} onClick={onClick}>
+            {label}
+        </button>
     );
 }
+
 
 export default ButtonInfo;
